@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Select Your Grade</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <div class="container">
+    <h1>Welcome to Elementary Math Practice</h1>
+    <p>Select your grade level to start practicing math questions!</p>
+    <div class="grade-buttons">
+      <button onclick="selectGrade('K')">Kindergarten</button>
+      <button onclick="selectGrade('1')">Grade 1</button>
+      <button onclick="selectGrade('2')">Grade 2</button>
+      <button onclick="selectGrade('3')">Grade 3</button>
+      <button onclick="selectGrade('4')">Grade 4</button>
+      <button onclick="selectGrade('5')">Grade 5</button>
+    </div>
+  </div>
+
+  <script>
+    function selectGrade(grade) {
+      window.location.href = `subject.html?grade=${grade}`;
+    }
+  </script>
+</body>
+</html>

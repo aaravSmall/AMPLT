@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Math Practice</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <div class="container">
+    <h1>Math Practice</h1>
+    <div id="question-container">
+      <p id="question">Loading question...</p>
+      <input type="number" id="answer" placeholder="Your answer">
+      <button onclick="checkAnswer()">Submit</button>
+      <button onclick="nextQuestion()">Next Question</button>
+    </div>
+
+    <div id="progress-container">
+      <div id="progress-bar"></div>
+      <p id="progress-text">0/10 Questions Answered</p>
+    </div>
+    
+    <p id="feedback"></p>
+  </div>
+
+  <script src="app.js"></script>
+  <script>
+    const urlParams = new URLSearchParams(window.location.search);
+    const grade = urlParams.get('grade');
+    const subject = urlParams.get('subject');
+
+    window.onload = () => generateQuestionForGrade(grade, subject);
+  </script>
+</body>
+</html>

@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Select Subject</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <div class="container">
+    <h2>Select a Subject</h2>
+    <p>Choose a math subject to start practicing for your grade.</p>
+    <div class="subject-buttons">
+      <button onclick="selectSubject('add')">Addition</button>
+      <button onclick="selectSubject('subtract')">Subtraction</button>
+      <button onclick="selectSubject('multiply')">Multiplication</button>
+      <button onclick="selectSubject('divide')">Division</button>
+    </div>
+  </div>
+
+  <script>
+    const urlParams = new URLSearchParams(window.location.search);
+    const grade = urlParams.get('grade');
+
+    function selectSubject(subject) {
+      window.location.href = `index.html?grade=${grade}&subject=${subject}`;
+    }
+  </script>
+</body>
+</html>
